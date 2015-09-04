@@ -1,2 +1,4 @@
 # Example-Code
-Repository for example code, which will be used to demonstrate various programming concepts to new programmers.
+Repository created for the purpose of helping intro programmers learn the Java programming language.
+
+This repository contains many small independent projects. The first project is in the package "tutorial1", the second tutorial is in the package "tutorial2", etc. Each project is well documented / commented, and aims to demonstrate a few concepts per-lesson.
