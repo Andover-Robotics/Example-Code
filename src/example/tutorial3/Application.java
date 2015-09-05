@@ -1,4 +1,4 @@
-public class A {
+public class Application {
 
 	public static void main(String[] args) {
 
@@ -44,8 +44,8 @@ public class A {
 
 		double hypotenuse = Math.sqrt(3 * 3 + 4 * 4);
 		// Calculates the hypotenuse of a triangle with sides 3 and 4.
-		// the value of hypotenuse is approximately equal to 5, but may be
-		// slightly off because of rounding
+		// the value of hypotenuse is approximately equal to 5, but 
+		// occasionally, it might not be exactly accurate (as an example, it could be 5.00000000001, or a similar number)
 
 		System.out.println("hypotenuse = " + hypotenuse);
 
@@ -61,7 +61,9 @@ public class A {
 
 		System.out.println("y0 = " + y0);
 
-		double i0 = 3. % 0.5; // sets i0 to approximately 6
+		double i0 = 3. % 0.5; 
+		// sets i0 approximately equal to 0. Like floating point division, Modulus can produce rounding errors
+		// occasionally, thus it might not be exactly accurate (as an example, it could be 0.00000000001, or a similar number)
 
 		System.out.println("i0 = " + i0);
 
@@ -96,35 +98,35 @@ public class A {
 		//For the most part, they behave just as you would expect (excluding the divide/mod by 0 behavior)
 		
 		/*
-		 * In addition to arithmetic datatypes,
-		 * the boolean datatype has some operators
-		 * to manipulate boolean data values
-		 * 
-		 * The basic boolean operations are
-		 *      &&    -> Performs a logical AND operation on two booleans
-		 *      ||    -> Performs a logical OR operation
-		 *      ^     -> Performs a logical XOR operation (This is an extremely rare operator for
-		 *                  boolean arithmetic -- feel free to skip it)
-		 *      !     -> Performs a logical NOT operation (if value was true, makes it false. If it was false, makes it true)
+		   In addition to arithmetic datatypes,
+		   the boolean datatype has some operators
+		   to manipulate boolean data values
+		   
+		   The basic boolean operations are
+		        &&    -> Performs a logical AND operation
+		        ||    -> Performs a logical OR operation
+		        ^     -> Performs a logical XOR operation (This is an extremely rare operator for
+		                    boolean arithmetic -- feel free to skip it)
+		        !     -> Performs a logical NOT operation (if value was true, makes it false. If it was false, makes it true)
 		 
 		   The behavior of each of these operators may be summarized in the following way
 		   
-		   Logical AND (&&) is true when both input are true
-		   		true && true -> true
+		   Logical AND (&&) is true when boolean1 is true AND boolean2 is true
+				true && true -> true
 		   		false && true -> false
 		   		true && false -> false
 		   		false && false -> false
 		   	
-		   Logical OR (||) is true when either input is true
-		        true || true -> true
-		        false || true -> true
-		        true || false -> true
-		        false || false -> false
+		   Logical OR (||) is true when either boolean1 is true OR boolean2 is true
+			        true || true -> true
+		        	false || true -> true
+		        	true || false -> true
+			        false || false -> false
 		   
 		   Logical XOR (^) is true when both input are different
 		   		true ^ true -> false
 		   		false ^ true -> true
-		   		true ^ false -> true
+	   	   		true ^ false -> true
 		   		false ^ false -> false
 		 */
 
@@ -145,6 +147,30 @@ public class A {
 		
 		System.out.println("!b1 = " + !b1); //prints false
 		System.out.println("!b2 = " + !b2); //prints true
+		
+		/*
+		
+		   Last but not least -- Comparison operators:
+		   	<,>         -> Greater than or Less than. Tells whether a number is greater than or less than
+		   		       another number. Result is a boolean value
+		   	==          -> Equals
+		
+		*/
+		
+		boolean bool1 = (4 > 0); //4 IS greater than 0 --> true
+		
+		boolean bool2 = (-1 < 0 && -1 > -4); //-1 IS less than 0, AND -1 IS greater than -4 --> true
+		
+		boolean bool3 = (5 < 10 ^ (-1 > 0 || 2 > 8)); 
+		//true 5 < 10 is true, and the expression (-1 > 0 || 2 > 8) is false.
+		//simplifying this yields (true ^ false), and so, because both booleans are NOT equal to each other, this is true
+		
+		System.out.println("bool1 = " + bool1);
+		System.out.println("bool2 = " + bool2);
+		System.out.println("bool3 = " + bool3);
+		
+		//Those were the operators on some of the fundamental datatypes
+		//Next section is about user input
 	}
 
 }
