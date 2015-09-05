@@ -74,6 +74,13 @@ public class Application {
     //Prints out what the user inputted into the console
     System.out.println("The inputted text was [" + inputString + "]");
  
+    // This tells the scanner to shut down. It is important to do this. If you do not you create a 'resource leak'
+    //    Resource leaks are a REALLY BIG problem in c, and c++. In java they are much rarer, however they exist sometimes
+    //    when dealing with low-level (this is sometimes referred to as "native") functionality such the scanner.
+    // Closing the scanner releases all of the memory which the scanner had allocated, as well as telling the Scanner
+    //    to stop reading from the command line
+    scanner.close();
+ 
     //Impressive! Isn't reading in text from the console kinda nifty ;)
     //VERY VERY SOON I will show you how to make a small program which reads a strings
     //from the console, and processes the information in order to make a small game
