@@ -99,7 +99,7 @@ public class Application {
     //Well there you go!
     //Variables and Comments!
     
-    //Next Lesson is about User Input and Arithmetic operations
+    //Next Lesson is about fundamental operations on some of the datatypes I mentioned
   }
 
 }
