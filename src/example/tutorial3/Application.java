@@ -4,9 +4,8 @@ public class Application {
 
 		// Last tutorial mentioned the most common variable datatypes which will
 		// be used in Robotics
-		// (well ... mostly likely the most common at least, we will have to
-		// wait and see)
 
+		//Examples
 		int x = 3;
 		boolean b = false;
 		double d = 0.1;
@@ -97,6 +96,38 @@ public class Application {
 		//Try playing around with some of the basic arithmetic operators until you feel comfortable with how they work
 		//For the most part, they behave just as you would expect (excluding the divide/mod by 0 behavior)
 		
+		/* There are also arithmetic operators which are often used to change the vlaue of a variable
+		
+			The following are the counter parts of the previously mentioned arithmetic operators
+			+=
+			-=
+			*=
+			/=
+			%=
+		
+			Here are some examples of how they are used
+		*/
+		
+		int f = 0;
+		f += 1; //Sets f to the value of (f+1) -- 1
+		f *= 2; //Sets f to the value of (f*2) -- 2
+		f *= 23; //f = f*23 -> 46
+		f /= 10; //f = f/10 --> 4
+		f %= 3; //f = f%3 --> 1
+		System.out.println("f = " + f);
+		
+		// There are two more small operators
+		// ++      --
+		
+		int r0 = 0;
+		r0++; //same as r0 = r + 1; or r0 += 1;
+		r0--; //same as r0 = r - 1; or r0 -= 1;
+		
+		//For now, remember to put the ++, or -- AFTER the variable
+		//	Note that ++r0 is DIFFERENT from r0++
+		//	Just to standardize things I will only be using the form r0++,
+		//      I.e. putting the operator after the variable
+		
 		/*
 		   In addition to arithmetic datatypes,
 		   the boolean datatype has some operators
@@ -105,10 +136,10 @@ public class Application {
 		   The basic boolean operations are
 		        &&    -> Performs a logical AND operation
 		        ||    -> Performs a logical OR operation
-		        ^     -> Performs a logical XOR operation (This is an extremely rare operator for
-		                    boolean arithmetic -- feel free to skip it)
 		        !     -> Performs a logical NOT operation (if value was true, makes it false. If it was false, makes it true)
-		 
+		        ^     -> Performs a logical XOR operation (This is an extremely rare operator for
+		                    boolean arithmetic, but it is useful to know what it is)
+
 		   The behavior of each of these operators may be summarized in the following way
 		   
 		   Logical AND (&&) is true when boolean1 is true AND boolean2 is true
@@ -147,14 +178,48 @@ public class Application {
 		
 		System.out.println("!b1 = " + !b1); //prints false
 		System.out.println("!b2 = " + !b2); //prints true
+
+		//Some example boolean operations
+		//===========================================================================//
+		
+		boolean isBusySaturday = false;
+		
+		//Represents the hour of the showing in international time.  I.e. hours 0 to 12 are
+		//	the AM hours, hours between 12 and 24 are PM hours. 16 is 4 in the afternoon
+		int hourOfShowing = 16; 
+		
+		//Represents whether you are available to go to the movies on saturday
+		//You can only go if you are not busy AND if the hour of showing is between noon and 10 PM
+		boolean availableForTheMovies = (!isBusySaturday && hourOfShowing >= 12 && hourOfShowing <= 22);
+		//availableForTheMovies is true, because all conditions are met
+		
+		//===========================================================================//
 		
 		/*
 		
-		   Last but not least -- Comparison operators:
+		   I mentioned some comparison operators in the last few examples, but here is an overview:
 		   	<,>         -> Greater than or Less than. Tells whether a number is greater than or less than
 		   		       another number. Result is a boolean value
+				Ex: 2 > 2 is false
+				    3 > 1 is true
+				    1 > 3 is false
+
 		   	==          -> Equals
-		
+		   		Ex: 2 == 2 is true
+		   		    4 == 3 is false
+
+		   	<=,>=       -> Less than or equal to, greater than or equal to
+		   		Ex: 2 <= 4 is true
+		   		    3 <= 3 is true
+		   		    4 <= 3 is false
+		   		    
+		   		    6 >= 5 is true
+		   		    6 >= 6 is true
+		   		    6 >= 7 is false
+		   		    
+			!=          -> NOT equals
+				Ex: 2 != 2 is false
+				    4 != 3 is true
 		*/
 		
 		boolean bool1 = (4 > 0); //4 IS greater than 0 --> true
